@@ -1,0 +1,23 @@
+{
+  "name": "rsx-generator-ios",
+  "version": "0.1.0",
+  "description": "Yeoman generator for a React Native iOS project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-native-contrib/rsx-generator-ios.git"
+  },
+  "author": "Hassan Khan <contact@hassankhan.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/react-native-contrib/rsx-generator-ios/issues"
+  },
+  "homepage": "https://github.com/react-native-contrib/rsx-generator-ios#readme",
+  "dependencies": {
+    "rsx-common": "^0.1.1",
+    "yeoman-environment": "^1.6.1"
+  }
+}
