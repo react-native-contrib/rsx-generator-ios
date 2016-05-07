@@ -7,10 +7,25 @@ module.exports = generator.Base.extend({
   constructor: function() {
     generator.Base.apply(this, arguments);
     this.argument('name', { type: String, required: true });
+
+    this.option('package', {
+      desc: 'Package name for the application (com.example.app)',
+      type: String,
+      defaults: 'com.rsx.' + this.name.toLowerCase()
+    });
+  },
+
+  initializing: function() {
+    if (!utils.validate.isPackageName(this.options.package)) {
+      throw new Error('Package name ' + this.options.package + ' is not valid');
+    }
   },
 
   writing: function() {
-    const templateVars = {name: this.name};
+    const templateParams = {
+      package: this.options.package,
+      name: this.name
+    };
     // SomeApp/ios/SomeApp
     this.fs.copyTpl(
       this.templatePath(path.join('app', '**')),
