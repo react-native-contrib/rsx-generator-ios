@@ -30,14 +30,14 @@ module.exports = generator.Base.extend({
     this.fs.copyTpl(
       this.templatePath(path.join('app', '**')),
       this.destinationPath(path.join('ios', this.name)),
-      templateVars
+      templateParams
     );
 
     // SomeApp/ios/SomeAppTests
     this.fs.copyTpl(
       this.templatePath(path.join('tests', 'Tests.m')),
       this.destinationPath(path.join('ios', this.name + 'Tests', this.name + 'Tests.m')),
-      templateVars
+      templateParams
     );
     this.fs.copy(
       this.templatePath(path.join('tests', 'Info.plist')),
@@ -48,12 +48,12 @@ module.exports = generator.Base.extend({
     this.fs.copyTpl(
       this.templatePath(path.join('xcodeproj', 'project.pbxproj')),
       this.destinationPath(path.join('ios', this.name + '.xcodeproj', 'project.pbxproj')),
-      templateVars
+      templateParams
     );
     this.fs.copyTpl(
       this.templatePath(path.join('xcodeproj', 'xcshareddata', 'xcschemes', '_xcscheme')),
       this.destinationPath(path.join('ios', this.name + '.xcodeproj', 'xcshareddata', 'xcschemes', this.name + '.xcscheme')),
-      templateVars
+      templateParams
     );
   },
 
